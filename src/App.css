@@ -1,0 +1,16 @@
+/* 더 이상 객체가 아니기 때문에 원래의 css 스타일대로 작성해 준다. */
+.app-style {
+    padding: 100px;
+    display: flex;
+    gap: 12px;
+}
+
+.square-style {
+    width: 100px;
+    height: 100px;
+    border: 1px solid green;
+    border-radius: 10px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
