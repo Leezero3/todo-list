@@ -1,16 +1,29 @@
 /* 더 이상 객체가 아니기 때문에 원래의 css 스타일대로 작성해 준다. */
 .app-style {
-    padding: 100px;
+    padding: 25px;
     display: flex;
     gap: 12px;
 }
 
 .square-style {
-    width: 100px;
+    width: 300px;
     height: 100px;
     border: 1px solid green;
     border-radius: 10px;
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center; */
+}
+
+.add-container {
+    min-width: 800px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-context-container {
+    display: flex;
+    align-items: center;
 }

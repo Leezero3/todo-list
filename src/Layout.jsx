@@ -5,6 +5,8 @@ function Layout(props) {
         <>
             <header
                 style={{
+                    maxWidth: "1200px",
+                    minWidth: "800px",
                     alignItems: "center",
                     border: "1px solid #ddd",
                     display: "flex",
