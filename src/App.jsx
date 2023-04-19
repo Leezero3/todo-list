@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import Layout from "./Layout";
+import Layout from "components/Layout";
+import TodoBox from "components/TodoBox";
 import { useState } from "react";
 
 const App = () => {
@@ -71,44 +72,24 @@ const App = () => {
                 </div>
 
                 <div>
-                    <h1>Working</h1>
+                    <h1>Working...🔥</h1>
                 </div>
                 <div className="app-style">
-                    {todos
-                        .filter(function (todo) {
-                            return todo.isDone === false;
-                        })
-                        .map(function (item) {
-                            return (
-                                <div key={item.id} className="square-style">
-                                    <div>{item.text}</div>
-                                    <br />
-                                    <div>{item.title}</div>
-                                    <button onClick={() => RemoveButtonHandler(item.id)}>삭제</button>
-                                    <button onClick={() => ClearButtonHandler(item.id)}>완료</button>
-                                </div>
-                            );
-                        })}
+                    <TodoBox
+                        todos={todos.filter((todo) => !todo.isDone)}
+                        RemoveButtonHandler={RemoveButtonHandler}
+                        ClearButtonHandler={ClearButtonHandler}
+                    />
                 </div>
                 <div>
-                    <h1>Done</h1>
+                    <h1>⭐️Done⭐️</h1>
                 </div>
                 <div className="app-style">
-                    {todos
-                        .filter(function (item) {
-                            return item.isDone === true;
-                        })
-                        .map(function (item) {
-                            return (
-                                <div key={item.id} className="square-style">
-                                    <div>{item.text}</div>
-                                    <br />
-                                    <div>{item.title}</div>
-                                    <button onClick={() => RemoveButtonHandler(item.id)}>삭제</button>
-                                    <button onClick={() => ClearButtonHandler(item.id)}>취소</button>
-                                </div>
-                            );
-                        })}
+                    <TodoBox
+                        todos={todos.filter((todo) => todo.isDone)}
+                        RemoveButtonHandler={RemoveButtonHandler}
+                        ClearButtonHandler={ClearButtonHandler}
+                    />
                 </div>
             </div>
         </Layout>
